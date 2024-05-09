@@ -6,32 +6,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add click event listeners to the dropdown options
     option1.addEventListener("click", function() {
-        alert("Option 1 clicked!");
-        navigator.clipboard.writeText("Text you want to copy");
+        alert("Selected bullet point!");
+        var blob = new Blob(["\u2022"], {type: "text/plain"});
+var url = window.URL.createObjectURL(blob);
+var a = document.createElement('a');
+a.href = url;
+a.download = 'bullet_point.txt';
+a.click();
+window.URL.revokeObjectURL(url);
+
 
 
         
     });
 
     option2.addEventListener("click", function() {
-        alert("Option 2 clicked!");
-        // You can add your desired functionality here
+        alert("Selected flower!")
+var blob = new Blob(["\u273f"], {type: "text/plain"});
+var url = window.URL.createObjectURL(blob);
+var a = document.createElement('a');
+a.href = url;
+a.download = 'flower.txt';
+a.click();
+window.URL.revokeObjectURL(url);
     });
 
     option3.addEventListener("click", function() {
-        alert("Option 3 clicked!");
-        // You can add your desired functionality here
-    });
-    
-        function copyToClipboard(text) {
-        navigator.clipboard.writeText(text)
-            .then(function() {
-                console.log('Text copied to clipboard:', text);
-                alert('Text copied to clipboard: ' + text);
-            })
-            .catch(function(error) {
-                console.error('Unable to copy text to clipboard: ', error);
-                alert('Unable to copy text to clipboard.');
-            });
-    }
-});
+        alert("Selected paragraph symbol!"); 
+        var blob = new Blob(["\u00B6"
+], {type: "text/plain"});
+var url = window.URL.createObjectURL(blob);
+var a = document.createElement('a');
+a.href = url;
+a.download = 'paragraph.txt';
+a.click();
+window.URL.revokeObjectURL(url);
+    });       
