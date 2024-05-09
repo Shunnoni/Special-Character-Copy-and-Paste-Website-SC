@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add click event listeners to the dropdown options
     option1.addEventListener("click", function() {
         alert("Option 1 clicked!");
-        // You can add your desired functionality here
+        navigator.clipboard.writeText("Text you want to copy");
+
+
+        
     });
 
     option2.addEventListener("click", function() {
@@ -19,4 +22,16 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Option 3 clicked!");
         // You can add your desired functionality here
     });
+    
+        function copyToClipboard(text) {
+        navigator.clipboard.writeText(text)
+            .then(function() {
+                console.log('Text copied to clipboard:', text);
+                alert('Text copied to clipboard: ' + text);
+            })
+            .catch(function(error) {
+                console.error('Unable to copy text to clipboard: ', error);
+                alert('Unable to copy text to clipboard.');
+            });
+    }
 });
